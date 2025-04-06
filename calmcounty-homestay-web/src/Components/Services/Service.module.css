@@ -9,14 +9,14 @@
 }
 
 .Service_cards .Service_card {
-    padding: 35px 30px;
+    padding: 35px 25px;
     border: 1px solid transparent;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     background-color: rgb(197, 190, 171, 0.25);
-    transition: .6s;
+    transition: .3s;
 }
 
 .Service_cards .Service_card:hover {

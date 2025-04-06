@@ -1,3 +1,7 @@
+.amenities_wrapper {
+    background-color: rgb(245, 245, 220);
+}
+
 .swiper {
     width: 100% !important;
 }
@@ -11,10 +15,8 @@
 .amenities__item img {
     width: 60%;
     height: auto;
-    border-top-right-radius: 200px;
-    border-bottom-right-radius: 200px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
 .content {
@@ -24,9 +26,11 @@
 }
 
 .content h2 {
-    font-size: 66px;
+    font-size: 64px;
+    font-weight: 900;
+    color: transparent;
     margin-left: -100px;
-    -webkit-text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px #e2ad66;
 }
 
 @media screen and (max-width:1200px) {

@@ -2,8 +2,9 @@
     background-color: #1f3623;
     color: #f4f1ec;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+
 }
 
 
@@ -20,6 +21,25 @@
     margin-top: 5px;
     cursor: pointer;
 
+}
+
+.SocialLinks {
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row;
+    gap: 25px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    color: rgba(131, 131, 131, 1);
+}
+
+.icon:hover {
+    color: #f4f1ec;
 }
 
 .FooterLinks p:hover {
