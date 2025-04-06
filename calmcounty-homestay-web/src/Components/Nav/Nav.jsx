@@ -1,10 +1,19 @@
 import React, { useRef } from "react";
 import navCSS from "./../Nav/Nav.module.css";
-import logo from "./../../assets/logo.jpg";
+import { useNavigate } from "react-router-dom";
+import { useScroll } from "../../ScrollContext";
 
 function Nav() {
   const menu = useRef();
   const navbar = useRef();
+  const navigate = useNavigate();
+  const { about, home, services, rooms, amenities, footer } = useScroll();
+
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const menuHandler = () => {
     menu.current.classList.toggle(navCSS.showNav);
@@ -20,42 +29,92 @@ function Nav() {
 
   return (
     <div className={navCSS.nav_wrapper} ref={navbar}>
-      <div className={navCSS.logo}>
-        <a href="#">
-          CALM COUNTY
-          <br />
-          <span>The beauty of Silence</span>
-        </a>
+      <div className={navCSS.nav_left}>
+        <div className={navCSS.logo}>
+          <a onClick={() => scrollToSection(home)}>CALM COUNTY</a>
+        </div>
       </div>
 
       <ul ref={menu}>
         <li>
-          <a href="#">Home</a>
+          <a
+            onClick={() => {
+              scrollToSection(home);
+              menuHandler();
+            }}
+          >
+            Home
+          </a>
         </li>
         <li>
-          <a href="#">About Us</a>
+          <a
+            onClick={() => {
+              scrollToSection(about);
+              menuHandler();
+            }}
+          >
+            About Us
+          </a>
         </li>
         <li>
-          <a href="#">Category</a>
+          <a
+            onClick={() => {
+              scrollToSection(services);
+              menuHandler();
+            }}
+          >
+            Services
+          </a>
         </li>
         <li>
-          <a href="#">Rooms</a>
+          <a
+            onClick={() => {
+              scrollToSection(rooms);
+              menuHandler();
+            }}
+          >
+            Rooms
+          </a>
         </li>
         <li>
-          <a href="#">Testimonials</a>
+          <a
+            onClick={() => {
+              scrollToSection(amenities);
+              menuHandler();
+            }}
+          >
+            Amenities
+          </a>
         </li>
         <li>
-          <a href="#">Blogs</a>
+          <a
+            onClick={() => {
+              scrollToSection(footer);
+              menuHandler();
+            }}
+          >
+            Contact Us
+          </a>
         </li>
       </ul>
 
-      <div className={navCSS.Nav_btns}>
-        <button>Book Now</button>
-        <i
-          className="ri-menu-4-line"
-          id={navCSS.bars}
-          onClick={menuHandler}
-        ></i>
+      <div className={navCSS.nav_right}>
+        <div className={navCSS.Nav_btns}>
+          <a href="tel:+917907756911">
+            <button>
+              <i
+                className="ri-phone-fill"
+                style={{ fontSize: "24px", color: "white" }}
+              ></i>{" "}
+              Book Now
+            </button>
+          </a>
+          <i
+            className="ri-menu-4-line"
+            id={navCSS.bars}
+            onClick={menuHandler}
+          ></i>
+        </div>
       </div>
     </div>
   );

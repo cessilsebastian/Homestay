@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
-import img1 from "./../../assets/img1.jpg";
-import img2 from "./../../assets/img1.jpg";
-import img3 from "./../../assets/img1.jpg";
+import img1 from "./../../assets/slider/img1.webp";
+import img2 from "./../../assets/slider/img1.webp";
+import img3 from "./../../assets/slider/img1.webp";
 
 function Testimonial() {
   return (
