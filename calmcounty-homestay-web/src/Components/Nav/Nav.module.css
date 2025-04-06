@@ -4,12 +4,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15%;
+    padding: 0 5%;
     background-color: transparent;
 
     position: fixed;
     top: 0;
     z-index: 99;
+}
+
+.nav_left {
+    flex: 1;
+}
+
+.nav_right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .nav_wrapper::after {
@@ -31,30 +42,18 @@
 .nav_wrapper .logo a {
     display: inline-block;
     text-align: center;
-    font-family: "Ubuntu Condensed", sans-serif;
+    font-family: "Tenor Sans", sans-serif;
     font-size: 35px;
     font-weight: 700;
     color: #f4f1ec;
     transition: transform 0.3s ease-in-out;
-    line-height: 0.7;
+    cursor: pointer;
 }
 
 .nav_wrapper .logo a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-.nav_wrapper .logo a span {
-    font-family: "Ephesis", cursive;
-    color: #f4f1ec;
-    font-weight: 900;
-    font-size: 24px;
-
-}
-
-.nav_wrapper .logo img {
-    width: 150px;
-
-}
 
 .nav_wrapper ul li {
     display: inline-block;
@@ -91,30 +90,43 @@
     font-weight: 500;
     font-family: 'poppins';
     font-size: 15px;
+    cursor: pointer;
 
 }
 
 #bars {
     border: none;
-    background-color: #355E3B;
-    height: 40px;
-    width: 40px;
+    background: #c29a66;
+    /* Dark green, semi-transparent */
+    height: 42px;
+    width: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: 20px;
     color: #fff;
-    box-shadow: 2px 2px 3px #ffffff94, inset 3px 3px 10px #ffffff39;
-    transition: 1s;
+    border-radius: 50%;
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.1),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.25),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     cursor: pointer;
-
     display: none;
+    z-index: 1000;
 }
 
+/* Hover effect */
 #bars:hover {
-    box-shadow: 0px 0px 0px #ffffff94, inset 3px 3px 10px #ffffff39;
-    transform: scale(0.95);
+    transform: scale(1.05);
+    background: #c29a66;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.2),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.2),
+        inset -1px -1px 5px rgba(0, 0, 0, 0.1);
 }
+
+
 
 @media screen and (max-width: 1200px) {
     #bars {
@@ -126,11 +138,15 @@
         top: 100%;
         left: -100%;
         width: 100%;
-        background-color: #355E3B;
+        background-color: rgba(194, 154, 102, 0.2);
         backdrop-filter: blur(8px);
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: 1px solid #fff;
         transition: 0.6s;
+    }
+
+    .nav_wrapper .logo a {
+        font-size: 20px;
     }
 
     .nav_wrapper ul li::after {
@@ -138,8 +154,17 @@
         top: 35px;
     }
 
+    .nav_wrapper ul {
+        display: none;
+    }
+
     .nav_wrapper .showNav {
+        display: block;
+        position: absolute;
         left: 0;
+        top: 80px;
+        width: 100%;
+        /* Your existing styles */
     }
 
     .nav_wrapper ul li {
